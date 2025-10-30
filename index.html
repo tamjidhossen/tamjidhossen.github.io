@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tamjid Hossen - Computer Science & Engineering Student | Tech Enthusiast">
+    <title>Tamjid Hossen - Portfolio</title>
+    <style>
+        /* Retro Dual-Tone Color Palette with Coffee Colors */
+        :root {
+            --coffee-dark: #2C1810;
+            --coffee-medium: #4A2C1A;
+            --cream: #F5E6D3;
+            --burnt-orange: #D84315;
+            --mustard: #F9A825;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: var(--cream);
+            color: var(--coffee-dark);
+            line-height: 1.6;
+            font-weight: 900;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Courier New', monospace;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 4rem;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--coffee-dark);
+            border-left: 12px solid var(--burnt-orange);
+            padding-left: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--coffee-dark);
+            font-weight: 900;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--coffee-dark);
+            color: var(--cream);
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            color: var(--cream);
+            text-shadow: 8px 8px 0 var(--burnt-orange);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 900;
+            color: var(--mustard);
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--cream);
+            margin-bottom: 3rem;
+            font-weight: 900;
+            border: 4px solid var(--mustard);
+            padding: 1rem 2rem;
+            display: inline-block;
+            box-shadow: 8px 8px 0 var(--burnt-orange);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 6rem;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--cream);
+            padding: 4rem 2rem;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: var(--mustard);
+            color: var(--coffee-dark);
+            box-shadow: 6px 6px 0 var(--coffee-dark);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: var(--coffee-dark);
+            color: var(--cream);
+            padding: 2rem;
+            border: 6px solid var(--burnt-orange);
+            box-shadow: 8px 8px 0 var(--burnt-orange);
+            transition: transform 0.1s ease;
+        }
+
+        .skill-card:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 4px 4px 0 var(--burnt-orange);
+        }
+
+        .skill-card h3 {
+            color: var(--mustard);
+            margin-bottom: 1rem;
+        }
+
+        .skill-card p {
+            color: var(--cream);
+            font-weight: 700;
+        }
+
+        /* Projects Section */
+        .projects {
+            background-color: var(--burnt-orange);
+            color: var(--cream);
+            padding: 4rem 2rem;
+        }
+
+        .projects h2 {
+            color: var(--cream);
+            border-left-color: var(--coffee-dark);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: var(--cream);
+            color: var(--coffee-dark);
+            padding: 2rem;
+            border: 6px solid var(--coffee-dark);
+            box-shadow: 8px 8px 0 var(--coffee-dark);
+            transition: transform 0.1s ease;
+        }
+
+        .project-card:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 4px 4px 0 var(--coffee-dark);
+        }
+
+        .project-card h3 {
+            color: var(--coffee-dark);
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: var(--coffee-dark);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: var(--coffee-dark);
+            background: var(--mustard);
+            text-decoration: none;
+            font-weight: 900;
+            padding: 0.5rem 1rem;
+            border: 3px solid var(--coffee-dark);
+            box-shadow: 4px 4px 0 var(--coffee-dark);
+            transition: transform 0.1s ease;
+        }
+
+        .project-link:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--coffee-dark);
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            background: var(--mustard);
+            padding: 4rem 2rem;
+        }
+
+        .contact h2 {
+            color: var(--coffee-dark);
+            border-left: none;
+            padding-left: 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--coffee-dark);
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 900;
+            border: 4px solid var(--coffee-dark);
+            box-shadow: 6px 6px 0 var(--coffee-dark);
+            transition: transform 0.1s ease;
+            text-transform: uppercase;
+        }
+
+        .social-link:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 3px 3px 0 var(--coffee-dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--coffee-dark);
+            color: var(--cream);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            font-weight: 900;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Tamjid Hossen</h1>
+            <p>Computer Science & Engineering Student</p>
+            <div class="tagline">Tech Enthusiast • Problem Solver • Builder</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>Hi there! I'm Tamjid Hossen, a passionate Computer Science & Engineering student with a deep interest in exploring the frontiers of technology. My journey in tech is driven by curiosity and a desire to create meaningful solutions.</p>
+                <p>I'm constantly learning and growing, diving into diverse areas from algorithmic problem-solving to cutting-edge artificial intelligence and web technologies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="container">
+        <h2>What I Do</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Competitive Programming</h3>
+                <p>Mastering data structures and algorithms through competitive problem-solving. Building strong analytical and logical thinking skills.</p>
+            </div>
+            <div class="skill-card">
+                <h3>AI & LLMs</h3>
+                <p>Exploring Large Language Models, automation, and artificial intelligence to build intelligent systems and chatbots.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Web Development</h3>
+                <p>Creating dynamic and responsive web applications using modern technologies and frameworks.</p>
+            </div>
+            <div class="skill-card">
+                <h3>DSA</h3>
+                <p>Deep understanding of data structures and algorithms, fundamental building blocks for efficient software solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Discord Finance Bot</h3>
+                    <p>AI-powered Discord bot that automatically tracks expenses from text, images, and voice messages, logging them to Google Sheets. Built entirely on free-tier services with JWT security and intelligent parsing via Google Gemini.</p>
+                    <a href="https://github.com/tamjidhossen/Discord-Finance-Bot" class="project-link" target="_blank">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Multilingual RAG System</h3>
+                    <p>A Multilingual RAG application with a knowledgebase of Bangla literature, enabling advanced information retrieval across languages.</p>
+                    <a href="https://github.com/tamjidhossen/Multilingual-RAG-System" class="project-link" target="_blank">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>JKKNIU Helpdesk Chatbot</h3>
+                    <p>An intelligent chatbot designed to assist students with university-related queries and information using Python and AI technologies.</p>
+                    <a href="https://github.com/tamjidhossen/JKKNIU-Helpdesk-Chatbot" class="project-link" target="_blank">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Financial Policy Chatbot</h3>
+                    <p>AI-powered chatbot for financial policy inquiries, leveraging natural language processing to provide accurate information.</p>
+                    <a href="https://github.com/tamjidhossen/financial-policy-chatbot" class="project-link" target="_blank">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>CP Library</h3>
+                    <p>A comprehensive collection of competitive programming algorithms and data structures implemented in C++ for quick reference and learning.</p>
+                    <a href="https://github.com/tamjidhossen/CP-Library" class="project-link" target="_blank">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>CSE Alumni Reunion Website</h3>
+                    <p>Official website for CSE Alumni Reunion 2025 at JKKNIU, built with modern web technologies to connect alumni and manage event information.</p>
+                    <a href="https://github.com/tamjidhossen/CSE-Alumni-Reunion-2025-Official-Website" class="project-link" target="_blank">View Project →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--coffee-dark); font-weight: 900;">Feel free to reach out if you want to collaborate or just say hi!</p>
+            <div class="social-links">
+                <a href="https://github.com/tamjidhossen" class="social-link" target="_blank">GitHub</a>
+                <a href="https://tamjidhossen.me" class="social-link" target="_blank">Website</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Tamjid Hossen. Built with passion and coffee</p>
+    </footer>
+</body>
+</html>
